@@ -25,7 +25,7 @@ while getopts ":c:m:x:" opt; do
   esac
 done
 
-if [ -d github/workspace ]; then
+if [ -d /github/workspace ]; then
   git config --global --add safe.directory /github/workspace
 fi
 
