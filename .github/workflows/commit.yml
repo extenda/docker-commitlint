@@ -14,9 +14,10 @@ jobs:
             DOCKER_PASSWORD: dockerhub-password
             DOCKER_USERNAME: dockerhub-username
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
-          node-version: 13
+          node-version-file: .nvmrc
+          cache: npm
 
       - name: Run tests
         run: |

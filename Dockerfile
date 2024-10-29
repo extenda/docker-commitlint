@@ -1,4 +1,4 @@
-FROM node:13-alpine
+FROM node:20-alpine
 
 WORKDIR /work/
 
@@ -11,8 +11,8 @@ COPY commitlint-plugin-tense/ ./commitlint-plugin-tense/
 COPY bin/commitlint.sh /usr/local/bin/commitlint
 COPY bin/action.sh /usr/local/bin/action
 
-RUN npm ci --production
-RUN npm ci --prefix commitlint-plugin-tense --production
+RUN npm ci --omit=dev
+RUN npm ci --prefix commitlint-plugin-tense --omit=dev
 RUN rm -rf ~/.npm
 
 ENTRYPOINT ["/usr/local/bin/commitlint"]
