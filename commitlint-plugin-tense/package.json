@@ -16,9 +16,9 @@
   "license": "MIT",
   "homepage": "https://github.com/extenda/pre-commit-hooks#readme",
   "peerDependencies": {
-    "@commitlint/lint": "^8.3.5"
+    "@commitlint/lint": "^19.5.0"
   },
   "devDependencies": {
-    "jest": "^25.1.0"
+    "jest": "^29.7.0"
   }
 }

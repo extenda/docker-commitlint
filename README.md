@@ -19,9 +19,9 @@ This image can be used in three ways.
 ### CLI
 
 ```bash
-$ docker pull extenda/commitlint
-$ echo "feat: add feature" | docker run --rm -i extenda/commitlint
-$ docker run --rm -i extenda/commitlint --from HEAD~1
+docker pull extenda/commitlint
+echo "feat: add feature" | docker run --rm -i extenda/commitlint
+docker run --rm -i extenda/commitlint --from HEAD~1
 ```
 
 ### Pre-Commit Hook
