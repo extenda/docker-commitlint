@@ -25,6 +25,10 @@ while getopts ":c:m:x:" opt; do
   esac
 done
 
+if [ -d github/workspace ]; then
+  git config --global --add safe.directory /github/workspace
+fi
+
 if [ -n "$message" ]; then
   echo "$message" | exec /usr/local/bin/commitlint
 elif [ -n "$commit" ]; then
