@@ -4,11 +4,11 @@
 # We embed this in our image to avoid rebuilding it at action runtime
 
 usage() {
-  echo "Usage: $0 [-c <sha>] [-x <bool>] [-m <string>]" 1>&2
+  echo "Usage: $0 [-c <sha>] [-x <bool>] [-m <string>] [-f <bool>]" 1>&2
   exit 1
 }
 
-while getopts ":c:m:x:" opt; do
+while getopts ":c:m:x:f:" opt; do
   case "${opt}" in
     c)
       commit="$OPTARG"
@@ -19,11 +19,16 @@ while getopts ":c:m:x:" opt; do
     x)
       relaxed="$OPTARG"
       ;;
+    f)
+      format="$OPTARG"
+      ;;
     *)
       usage
       ;;
   esac
 done
+
+export FORMAT_CHECK="${format:-false}"
 
 if [ -d /github/workspace ]; then
   git config --global --add safe.directory /github/workspace

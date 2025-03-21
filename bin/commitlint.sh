@@ -6,9 +6,10 @@ if [ "$1" == ".git/COMMIT_EDITMSG" ]; then
   # Running from pre-commit hook.
   ARGS="$ARGS --edit $1"
 else
-  # Use whatever args we where passed.
+  # Use whatever args we were passed.
   ARGS="$ARGS $*"
 fi
 
 # shellcheck disable=SC2086
+
 exec /work/node_modules/.bin/commitlint $ARGS
