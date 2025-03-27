@@ -24,8 +24,8 @@ jobs:
           npm ci
           npm ci --prefix commitlint-plugin-tense
           npm test --prefix commitlint-plugin-tense
-          npm ci --prefix commitlint-plugin-form
-          npm test --prefix commitlint-plugin-form
+          npm ci --prefix commitlint-plugin-format
+          npm test --prefix commitlint-plugin-format
 
       - name: Push to DockerHub
         if: github.ref == 'refs/heads/master'
