@@ -7,6 +7,7 @@ It is configured for use within Extenda Retail and has the following settings
   * Disable the `scope-case` rule to allow any case
   * Change the `subject-case` rule to `sentence-case`
   * Custom `imperative-tense` rule to check subjects for imperative mood
+  * Custom 'format' rule to validate structure of PR title
 
 ## :rocket: Usage
 
@@ -41,7 +42,7 @@ The image can be used to build a [pre-commit](https://pre-commit.com) hook. Exte
 To support GitHub actions, the docker image offers an alternative entrypoint under `/usr/local/bin/action`.
 
 ```
-Usage: action [-c <sha>] [-m <message>]
+Usage: action [-c <sha>] [-m <message>] [-f <check_format>]
 ```
 
 Extenda Retail provides a GitHub action out-of-the-box available
