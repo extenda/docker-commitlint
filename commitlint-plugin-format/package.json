@@ -1,7 +1,11 @@
 {
-  "name": "pre-commitlint",
+  "name": "commitlint-plugin-format",
   "version": "0.0.1-local",
-  "description": "Commitlint pre-commit hook",
+  "description": "Commitlint plugin that adds format rule",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
   "private": true,
   "repository": "github:extenda/pre-commit-hooks",
   "author": {
@@ -11,10 +15,10 @@
   },
   "license": "MIT",
   "homepage": "https://github.com/extenda/pre-commit-hooks#readme",
-  "dependencies": {
-    "@commitlint/cli": "^19.5.0",
-    "@commitlint/config-conventional": "^19.5.0",
-    "commitlint-plugin-format": "file:commitlint-plugin-format",
-    "commitlint-plugin-tense": "file:commitlint-plugin-tense"
+  "peerDependencies": {
+    "@commitlint/lint": "^19.5.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
   }
 }
